@@ -53,7 +53,6 @@ if (message.content.startsWitch(prefix + "sondage")) {
 		.then(function (message){ 
 			message.react("✔")
 			message.react("✖")
-
 		}).catch(function(){
 		});	
 		}else{
