@@ -29,7 +29,7 @@ bot.on("message", message => {
     }
 	
 bot.on("message", message => {
-if(message.content === prefix + infodiscord){
+    if(message.content === prefix + infodiscord){
 	var embed = new Discord.RichEmbed()
 	.setDescription("Information Discord")
 	.addField("Nom du Discord", message.guild.name)
