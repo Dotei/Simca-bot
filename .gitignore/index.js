@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 
 var prefix = ("!")
+var bot = new Discord.client();
 
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
