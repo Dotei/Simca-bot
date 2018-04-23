@@ -29,7 +29,7 @@ bot.on("message", message => {
     }
 	
 bot.on("message", message => {
-    if(message.content === prefix + infodiscord){
+    if(message.content === prefix + infodiscord)
 	var embed = new Discord.RichEmbed()
 	.setDescription("Information Discord")
 	.addField("Nom du Discord", message.guild.name)
@@ -41,7 +41,7 @@ message.channel.sendEmbed(embed)
 
 }
 
-if (message.content.startsWitch(prefix + "sondage")){
+if (message.content.startsWitch(prefix + "sondage")) {
 	if(message.author.id == "437991432419016714"){
 		let args = message.content.split(" ").slice(1);
 		var embed = new Discord.RichEmbed()
@@ -49,7 +49,7 @@ if (message.content.startsWitch(prefix + "sondage")){
 			.addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
 			.setColor("0xB40404")
 			.setTimestamp()
-		message.guild.channels.find("namee", "sondage").sendEmbed(embed)
+		message.channel.sendEmbed(embed)
 		.then(function (message){ 
 			message.react("✔")
 			message.react("✖")
@@ -58,7 +58,7 @@ if (message.content.startsWitch(prefix + "sondage")){
 		});	
 		}else{
 			return message.reply("tu n'as pas la permission") 
-}
+}}})
 
     
 });
