@@ -8,9 +8,6 @@ bot.on("ready", function() {
     console.log("connectedç")
 })
 
-bot.login(process.env.TOKEN);
-  }
-
 bot.on("message", message => {
     if (message.content === prefix + "help"){  
         message.channel.sendMessage("Liste des commandes: \n -!help");
@@ -21,3 +18,5 @@ bot.on("message", message => {
         console.log('Ching chang !');
     }
 });
+
+bot.login(process.env.TOKEN);
