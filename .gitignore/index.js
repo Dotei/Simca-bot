@@ -27,6 +27,8 @@ bot.on("message", message => {
         message.reply("J'ai été coder par Dotei !");
         console.log('Ping Pong !');
     }
+	
+bot.on("message", message => {
 if(message.content === prefix + infodiscord){
 	var embed = new Discord.RichEmbed()
 	.setDescription("Information Discord")
