@@ -8,7 +8,7 @@ bot.on("ready", function() {
     console.log("connectedç")
 })
 
-
+bot.login(process.env.TOKEN);
 
 bot.on("message", message => {
     if (message.content === prefix + "help"){  
@@ -45,4 +45,3 @@ bot.on("message", message => {
     
 
 
-bot.login(process.env.TOKEN);
