@@ -27,20 +27,24 @@ bot.on("message", message => {
         message.reply("J'ai été coder par Dotei !");
         console.log('Ping Pong !');
     }
-	
-bot.on("message", message => {
-    if(message.content === prefix + infodiscord)
-	var embed = new Discord.RichEmbed()
-	.setDescription("Information Discord")
-	.addField("Nom du Discord", message.guild.name)
-	.addField("Crée le", message.guild.createdAt)
-	.addField("Tu as rejoin le", message.member.joinedAt)
-	.addField("utilisateurs sur le doscord", message.guild.memberCount)
-	.setColor("0x0000FF")
-message.channel.sendEmbed(embed)
 
-     }
-
+if (message.content.startsWitch(prefix + "sondage")) {
+	if(message.author.id == "437991432419016714"){
+		let args = message.content.split(" ").slice(1);
+		var embed = new Discord.RichEmbed()
+			.setDescription("Sondage")
+			.addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
+			.setColor("0xB40404")
+			.setTimestamp()
+		message.channel.sendEmbed(embed)
+		.then(function (message){ 
+			message.react("✔")
+			message.react("✖")
+		}).catch(function(){
+		});	
+		}else{
+			return message.reply("tu n'as pas la permission.") 
+}}})
 
 });
     
