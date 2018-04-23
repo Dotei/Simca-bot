@@ -8,6 +8,8 @@ bot.on("ready", function() {
     console.log("connectedç")
 })
 
+
+
 bot.on("message", message => {
     if (message.content === prefix + "help"){  
         message.channel.sendMessage("Liste des commandes: \n -!help");
@@ -17,6 +19,11 @@ bot.on("message", message => {
         message.reply("Chang !");
         console.log('Ching chang !');
     }
+        if (message.content === "ping"){  
+        message.reply("Pong !");
+        console.log('Ping Pong !');
+    }
+   
 });
 
 bot.login(process.env.TOKEN);
