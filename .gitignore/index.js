@@ -23,6 +23,10 @@ bot.on("message", message => {
         message.reply("Pong !");
         console.log('Ping Pong !');
     }
+        if (message.content === prefic + "info"){  
+        message.reply("J'ai été coder par Dotei !");
+        console.log('Ping Pong !');
+    }
    
 });
 
