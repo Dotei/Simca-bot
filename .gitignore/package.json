@@ -5,6 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+      },
+  "dependencies": {
+    "youtube-dl": "^1.11.1",
+    "ytdl-core": "^0.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
   },
   "author": "Dotei",
   "license": "ISC",
