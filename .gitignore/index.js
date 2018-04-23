@@ -40,25 +40,9 @@ bot.on("message", message => {
 message.channel.sendEmbed(embed)
 
 }
-});
-if (message.content.startsWitch(prefix + "sondage")) {
-	if(message.author.id == "437991432419016714"){
-		let args = message.content.split(" ").slice(1);
-		var embed = new Discord.RichEmbed()
-			.setDescription("Sondage")
-			.addField(thingToEcho, "Répondre avec :white_check_mark: ou :x:")
-			.setColor("0xB40404")
-			.setTimestamp()
-		message.channel.sendEmbed(embed)
-		.then(function (message){ 
-			message.react("✔")
-			message.react("✖")
-		}).catch(function(){
-		});	
-		}else{
-			return message.reply("tu n'as pas la permission.") 
-}}})
 
+
+});
     
 
 
