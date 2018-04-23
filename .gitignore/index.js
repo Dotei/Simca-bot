@@ -58,7 +58,7 @@ if (message.content.startsWitch(prefix + "sondage")){
 		});	
 		}else{
 			return message.reply("tu n'as pas la permission") 
-}}})
+}
 
     
 });
