@@ -19,4 +19,10 @@ bot.on("message", message => {
         message.reply("Pong !");
         console.log('Ping Pong !');
     }
+    }
+
+    if (message.content === "ching"){  
+        message.reply("Chang !");
+        console.log('Ching Chang !');
+    }
 });
