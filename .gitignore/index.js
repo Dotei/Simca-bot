@@ -16,45 +16,23 @@ bot.on('message', message => {
   }
 })
 
-bot.on('message', message => {
-
-  if (message.content.startsWith('!play')) {
-    // On récupère le premier channel audio du serveur
-    let voiceChannel = message.guild.channels
-      .filter(function (channel) { return channel.type === 'voice' })
-      .first()
-    // On récupère les arguments de la commande 
-    // il faudrait utiliser une expression régulière pour valider le lien youtube
-    let args = message.content.split(' ')
-    // On rejoint le channel audio
-    voiceChannel
-      .join()
-      .then(function (connection) {
-        // On démarre un stream à partir de la vidéo youtube
-        let stream = YoutubeStream(args[1])
-        stream.on('error', function () {
-          message.reply("Je n'ai pas réussi à lire cette vidéo :(")
-          connection.disconnect()
-        })
-        // On envoie le stream au channel audio
-        // Il faudrait ici éviter les superpositions (envoie de plusieurs vidéo en même temps)
-        connection
-          .playStream(stream)
-          .on('end', function () {
-            connection.disconnect()
-          })
-      })
+if(command === "say") {
+    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
   }
-
-})
 
 bot.on("message", message => {
     if (message.content === prefix + "help"){  
         message.channel.sendMessage("Liste des commandes: \n -!help");
     }
 
-    if (message.content === "ping"){  
-        message.reply("Pong !");
-        console.log('Ping Pong !');
+    if (message.content === "ching"){  
+        message.reply("Chang !");
+        console.log('Ching chang !');
     }
 });
