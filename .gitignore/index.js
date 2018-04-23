@@ -6,7 +6,7 @@ var prefix = ("!")
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
     console.log("connectedç")
-});
+})
 
 bot.login(process.env.TOKEN);
   }
