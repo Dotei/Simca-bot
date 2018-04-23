@@ -39,7 +39,7 @@ bot.on("message", message => {
 	.setColor("0x0000FF")
 message.channel.sendEmbed(embed)
 
-}
+     }
 
 
 });
