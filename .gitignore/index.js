@@ -19,6 +19,4 @@ bot.on("message", message => {
         message.reply("Pong !");
         console.log('Ping Pong !');
     }
-    
-
 });
