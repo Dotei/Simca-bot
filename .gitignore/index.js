@@ -28,9 +28,8 @@ bot.on("message", message => {
         console.log('Ping Pong !');
     }
 	
-bot.on("message", message => {
 	
-    if(message.content === prefix + "infodiscord")
+    if(message.content === prefix + "infodiscord") {
 	var embed = new Discord.RichEmbed()
 	.setDescription("Information Discord")
 	.addField("Nom du Discord", message.guild.name)
@@ -38,7 +37,7 @@ bot.on("message", message => {
 	.addField("Tu as rejoin le", message.member.joinedAt)
 	.addField("utilisateurs sur le doscord", message.guild.memberCount)
 	.setColor("0x0000FF")
-message.channel.sendEmbed(embed)
+     message.channel.sendEmbed(embed)
 
      }
 
