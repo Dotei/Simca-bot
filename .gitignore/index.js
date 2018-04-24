@@ -27,6 +27,22 @@ bot.on("message", (message) => {
         message.reply("```Je suis toujours en développement, coder par Dotei ! ```");
         console.log('info bot !');
     }
+    
+     if (message.content === PREFIX + "serverinfo"){
+    
+        let sicon = message.guild.iconURL;
+        let serverembed = new Discord.RichEmbed()
+        .setDescription("Server Information")
+        .setColor("#15f153")
+        .setThumbnail(sicon)
+        .addField("Server Name", message.guild.name)
+        .addField("Created On", message.guild.createdAt)
+        .addField("You Joined", message.member.joinedAt)
+        .addField("Total Members", message.guild.memberCount);
+    
+        return message.channel.send(serverembed);
+      }
+
 
       
     if (!message.content.startsWith(PREFIX)) return;
@@ -61,3 +77,5 @@ bot.on("message", (message) => {
     }  
      
 });
+
+     
