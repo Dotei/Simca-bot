@@ -16,6 +16,7 @@ bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
     })
 
+bot.on("message", (message) => {
     if (message.content === "bonjour"){
         message.reply("Hey");
 
