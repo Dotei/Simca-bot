@@ -23,5 +23,9 @@ bot.on("message", message => {
         message.reply("J'ai été coder par Dotei !");
         console.log('info bot !');
     }
+        if (message.content === "ching"){  
+        message.reply("Chang!");
+        console.log('Ching Chang!');
+    }    
    
 });
