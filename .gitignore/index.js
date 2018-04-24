@@ -38,8 +38,6 @@ bot.on("message", function(message){
             message.channel.sendEmbed(embed);
             break;
            
-        default:
-            message.channel.sendMessage("Invalid command")
 
         
     }  
