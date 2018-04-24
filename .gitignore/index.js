@@ -39,7 +39,7 @@ bot.on("message", (message) => {
             break;
         case "cry":
             var embed = new Discord.RichEmbed()
-                .setDescription(`${message.author.tag} is sad`)
+                .setTitle(`${message.author.tag} is sad`)
                 .setImage("https://cdn.weeb.sh/images/ryVBX8mw-.gif")
             message.channel.sendEmbed(embed);
             break;
