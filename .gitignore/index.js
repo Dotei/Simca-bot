@@ -4,7 +4,8 @@ const Discord = require("discord.js");
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
-const client = new Discord.Client();
+const bot = new Discord.Client();
+
 
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
@@ -143,3 +144,5 @@ client.on("message", async message => {
         console.log('Infobot !');
   }       
 });
+
+bot.login(process.env.TOKEN);
