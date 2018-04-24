@@ -4,6 +4,8 @@ const bot = new Discord.Client();
 var bot = new Discord.Client();
 var prefix = ("!")
 
+
+
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
     console.log("connected");
@@ -25,12 +27,8 @@ bot.on("message", message => {
         if (message.content === "ching"){  
         message.reply("Chang!");
         console.log('Ching Chang!');
-    });  
-
-const Discord = require("discord.js");
-var bot = new Discord.Client();
-bot.on('message', message => {
-
+    }) 
+bot.on("message", message => {
     if(message.content === prefix + "infodiscord") {
         var embed = new Discord.RichEmbed()
         .setDescription("Information du Discord")
@@ -61,4 +59,6 @@ bot.on('message', message => {
         }else{ 
             return message.reply("tu n'as pas la permission.")
 }}})
+  
+  
 bot.login(process.env.TOKEN);
