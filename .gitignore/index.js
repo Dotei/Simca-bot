@@ -1,16 +1,18 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+var bot = new Discord.Client();
 
+bot.login(TOKEN);
 
 var prefix = ("!")
 
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
     console.log("connected")
-}
+});
 
 
-bot.on("message", message => {
+client.on("message", message => {
     if (message.content === prefix + "help"){  
         message.channel.sendMessage("Liste des commandes: \n -!help");
     }
