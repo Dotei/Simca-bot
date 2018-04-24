@@ -17,6 +17,10 @@ bot.on("message", function(message){
     if (message.content == "bonjour"){
         message.channel.sendMessage("Hey");
     }
+    if (message.content === prefix + "info"){  
+        message.reply("Je suis toujours en devellopement, Et j'ai été coder par Dotei !");
+        console.log('info bot !');
+    }
 
       
     if (!message.content.startsWith(PREFIX)) return;
