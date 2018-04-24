@@ -18,7 +18,7 @@ client.on("message", message => {
 
     if (message.content === "ping"){  
         message.reply("Pong !");
-        console.log('Ping Pong !');
+        console.log('Ping Pong!');
     }   
         if (message.content === prefix + "info"){  
         message.reply("J'ai été coder par Dotei !");
@@ -27,8 +27,6 @@ client.on("message", message => {
         if (message.content === "ching"){  
         message.reply("Chang!");
         console.log('Ching Chang!');
-    }   
-
-    
+    }     
 });
 
