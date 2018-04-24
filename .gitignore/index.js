@@ -1,13 +1,15 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
 
-var prefix = ("!")
+const TOKEN = "NDM4MjkyNjgzODcwNTY4NDQ4.DcCfZQ.wJjozX0tXzb3xbSZ1bxh_rkyn_s"
+const PREFIX ="!"
+
+var bot = new Discord.Client();
+
+bot.login(TOKEN);
 
 bot.on("ready", function() {
-    bot.user.setGame("Command: !help");
-    console.log("connected")
+    console.log("Ready");
 });
-
 
 bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
@@ -34,24 +36,8 @@ bot.on("message", function(message){
            
         default:
             message.channel.sendMessage("Invalid command")
-    }
 
-   bot.on("message", message => {
-    if (message.content === prefix + "help"){  
-        message.channel.sendMessage("Liste des commandes: \n -!help");
-    }
-
-    if (message.content === "ping"){  
-        message.reply("Pong !");
-        console.log('Ping Pong!');
-    }   
-        if (message.content === prefix + "info"){  
-        message.reply("J'ai été coder par Dotei !");
-        console.log('info bot !');
-    }
-        if (message.content === "ching"){  
-        message.reply("Chang!");
-        console.log('Ching Chang!');
-    }     
+        
+    }  
+     
 });
-
