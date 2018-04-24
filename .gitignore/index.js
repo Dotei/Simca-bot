@@ -41,6 +41,12 @@ bot.on("message", function(message){
                 .setImage("https://cdn.weeb.sh/images/ryVBX8mw-.gif")
             message.channel.sendEmbed(embed);
             break;
+         case "punch":
+            var embed = new Discord.RichEmbed()
+                .setTitle(`Simca punches ${message.author.tag} `)
+                .setImage("http://imgur.com/6wKJVHy.gif")
+            message.channel.sendEmbed(embed);
+            break;
            
 
         
