@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-
 var prefix = ("!")
 
 bot.on("ready", function() {
@@ -9,20 +8,6 @@ bot.on("ready", function() {
     console.log("connected")
 });
 
-client.login(process.env.TOKEN);
-
-const Discord = require("discord.js");
-
-const TOKEN = "NDM4MjkyNjgzODcwNTY4NDQ4.DcCfZQ.wJjozX0tXzb3xbSZ1bxh_rkyn_s"
-const PREFIX ="!"
-
-var bot = new Discord.Client();
-
-bot.login(TOKEN);
-
-bot.on("ready", function() {
-    console.log("Ready");
-});
 
 bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
@@ -50,7 +35,6 @@ bot.on("message", function(message){
         default:
             message.channel.sendMessage("Invalid command")
 
-        
     }  
      
 });
