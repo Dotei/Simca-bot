@@ -43,6 +43,33 @@ bot.on("message", (message) => {
         return message.channel.send(serverembed);
       }
     
+     if (message.content === PREFIX + "report"){
+    
+        //!report @ned this is the reason
+    
+        let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+        if(!rUser) return message.channel.send("Impossible de trouver l'utilisateur.");
+        let rreason = args.join(" ").slice(22);
+    
+        let reportEmbed = new Discord.RichEmbed()
+        .setDescription("Reports")
+        .setColor("#15f153")
+        .addField("Utilisateur signalé", `${rUser} with ID: ${rUser.id}`)
+        .addField("Rapporté par", `${message.author} with ID: ${message.author.id}`)
+        .addField("Channel", message.channel)
+        .addField("Date", message.createdAt)
+        .addField("Raison", rreason);
+    
+        let reportschannel = message.guild.channels.find(`name`, "reports");
+        if(!reportschannel) return message.channel.send("Impossible de trouver la chaîne de rapports.");
+    
+    
+        message.delete().catch(O_o=>{});
+        reportschannel.send(reportEmbed);
+    
+        return;
+      }
+    
      if (message.content === PREFIX + "botinfo"){
      
         let bicon = bot.user.displayAvatarURL;
