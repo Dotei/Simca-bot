@@ -27,6 +27,11 @@ bot.on("message", message => {
         console.log('Ching Chang!');
     }
 
+        if (message.content === 'what is my avatar') { 
+        message.reply(message.author.avatarURL);
+  }
+
+
 });  
 
 bot.login(process.env.TOKEN);
