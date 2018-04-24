@@ -17,7 +17,7 @@ bot.on("message", function(message){
     })
 
 bot.on("message", (message) => {
-    if (message.content === "bonjour"){
+    if (message.content === ["bonjour", "salut", "wsh", "bonsoir"]){
         message.reply("Hey");
 
   }
