@@ -1,7 +1,10 @@
 const Discord = require("discord.js");
 var bot = new Discord.Client();
-bot.on('message', message => {
 
+var prefix = "!"
+var PREFIX = "!"
+
+bot.on('message', message => {
     if(message.content === prefix + "infodiscord") {
         var embed = new Discord.RichEmbed()
         .setDescription("Information du Discord")
