@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-var bot = new Discord.Client();
+const bot = new Discord.Client();
 
 
 var prefix = ("!")
@@ -7,7 +7,7 @@ var prefix = ("!")
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
     console.log("connected")
-});
+}
 
 
 bot.on("message", message => {
