@@ -43,7 +43,7 @@ bot.on("message", function(message){
             break;
          case "punch":
             var embed = new Discord.RichEmbed()
-                .setTitle(`Simca punches ${message.author} `)
+                .setTitle(`Simca punches ${message.author.tag} `)
                 .setImage("http://imgur.com/6wKJVHy.gif")
             message.channel.sendEmbed(embed);
             break;
