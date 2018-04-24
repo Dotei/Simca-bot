@@ -1,11 +1,10 @@
 const Discord = require("discord.js");
 var bot = new Discord.Client();
 
-var prefix = "!"
 var PREFIX = "!"
 
 bot.on('message', message => {
-    if(message.content === prefix + "infodiscord") {
+    if(message.content === PREFIX + "infodiscord") {
         var embed = new Discord.RichEmbed()
         .setDescription("Information du Discord")
         .addField("Nom du discord", message.guild.name)
@@ -17,7 +16,7 @@ bot.on('message', message => {
 
     }
 
-    if (message.content.startsWitch(prefix + "sondage")) {
+    if (message.content.startsWitch(PREFIX + "sondage")) {
         if(message.author.id == "238937155680993281"){ 
             let args = message.content.split(" ").slice(1);
             let thingToEcho = args.join(" ")
