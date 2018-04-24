@@ -17,12 +17,13 @@ bot.on("message", function(message){
 
     if (message.content == "bonjour"){
         message.channel.sendMessage("Hey");
-        
-    if (message.content === 'avatar') {
-    message.reply(message.author.avatarURL);
 
   }
-    
+bot.on('message', message => {
+     if (message.content === 'avatar') {
+        message.reply(message.author.avatarURL);
+    }
+         
       
     if (message.content === PREFIX + "info"){  
         message.reply("Je suis toujours en devellopement, Et j'ai été coder par Dotei !");
