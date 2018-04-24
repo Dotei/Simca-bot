@@ -19,10 +19,6 @@ bot.on("message", function(message){
         message.channel.sendMessage("Hey");
 
   }
-bot.on('message', message => {
-     if (message.content === 'avatar') {
-        message.reply(message.author.avatarURL);
-    }
          
       
     if (message.content === PREFIX + "info"){  
