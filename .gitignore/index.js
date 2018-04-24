@@ -15,7 +15,7 @@ bot.on("ready", function() {
 bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
 
-    if (message.content == ('bonjour','salut','bonsoir','bjr','salut','wsh')){
+    if (message.content == ("bonjour","salut","bonsoir", "bjr", "salut", "wsh")){
         message.channel.reply("Hey");
 
   }
