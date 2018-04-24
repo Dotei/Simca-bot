@@ -34,13 +34,9 @@ bot.on("message", function(message){
            
         default:
             message.channel.sendMessage("Invalid command")
+    }
 
-    }  
-     
-});
-
-
-client.on("message", message => {
+   bot.on("message", message => {
     if (message.content === prefix + "help"){  
         message.channel.sendMessage("Liste des commandes: \n -!help");
     }
