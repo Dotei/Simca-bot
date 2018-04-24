@@ -25,10 +25,9 @@ bot.on("message", message => {
         if (message.content === "ching"){  
         message.reply("Chang!");
         console.log('Ching Chang!');
-    }   
+    });  
 
 bot.on('message', message => {
-
     if(message.content === prefix + "infodiscord") {
         var embed = new Discord.RichEmbed()
         .setDescription("Information du Discord")
