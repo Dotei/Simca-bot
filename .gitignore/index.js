@@ -27,7 +27,10 @@ bot.on("message", message => {
         console.log('Ching Chang!');
     });  
 
+const Discord = require("discord.js");
+var bot = new Discord.Client();
 bot.on('message', message => {
+
     if(message.content === prefix + "infodiscord") {
         var embed = new Discord.RichEmbed()
         .setDescription("Information du Discord")
@@ -51,15 +54,11 @@ bot.on('message', message => {
             .setTimestamp()
         message.guild.channels.find("name", "sondage"). sendEmbed(embed)
         .then(function(message) { 
-            message.react("")
-            message.react("")
+            message.react("✅")
+            message.react("✕")
         }).catch(function() { 
         });
         }else{ 
             return message.reply("tu n'as pas la permission.")
-        }}})
-    
-
-});
-
+}}})
 bot.login(process.env.TOKEN);
