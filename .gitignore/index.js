@@ -20,9 +20,14 @@ bot.on("message", function(message){
 
 
   }
-
+('message', message => {
+  // If the message is "what is my avatar"
+  if (message.content === 'mon avatar') {
+    // Send the user's avatar URL
+    message.reply(message.author.avatarURL);
     
-    
+    }
+      
     if (message.content === PREFIX + "info"){  
         message.reply("Je suis toujours en devellopement, Et j'ai été coder par Dotei !");
         console.log('info bot !');
