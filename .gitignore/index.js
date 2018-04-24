@@ -4,13 +4,7 @@ const Discord = require("discord.js");
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
-const bot = new Discord.Client();
-
-
-bot.on("ready", function() {
-    bot.user.setGame("Command: !help");
-    console.log("connected")
-});
+const client = new Discord.Client();
 
 // Here we load the config.json file that contains our token and our prefix values. 
 const config = require("./config.json");
@@ -87,19 +81,19 @@ client.on("message", async message => {
     // We can also support getting the member by ID, which would be args[0]
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
-      return message.reply("Veuillez mentionner un membre valide de ce serveur");
+      return message.reply("Please mention a valid member of this server");
     if(!member.kickable) 
-      return message.reply("Je ne peux pas Kick cet utilisateur! Ont-ils un rôle plus important? Ai-je des autorisations de kick??");
+      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     
     // slice(1) removes the first part, which here should be the user mention or ID
     // join(' ') takes all the various parts to make it a single string.
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "Aucune raison fournie";
+    if(!reason) reason = "No reason provided";
     
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${member.user.tag} a été kick par ${message.author.tag} car: ${reason}`);
+    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
 
   }
   
@@ -107,20 +101,20 @@ client.on("message", async message => {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
     if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
-      return message.reply("Désolé, vous n'êtes pas autorisé à utiliser cette fonctionnalité.!");
+      return message.reply("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
     if(!member)
-      return message.reply("Veuillez mentionner un membre valide de ce serveur");
+      return message.reply("Please mention a valid member of this server");
     if(!member.bannable) 
-      return message.reply("Je ne peux pas Ban cet utilisateur! Ont-ils un rôle plus important? Ai-je des autorisations de ban?");
+      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
 
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "Aucune raison fournie";
+    if(!reason) reason = "No reason provided";
     
     await member.ban(reason)
-      .catch(error => message.reply(`Pardon ${message.author} Je ne peux pas Ban à cause de : ${error}`));
-    message.reply(`${member.user.tag} a été banni par ${message.author.tag} car: ${reason}`);
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
+    message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
   }
   
   if(command === "purge") {
@@ -131,18 +125,14 @@ client.on("message", async message => {
     
     // Ooooh nice, combined conditions. <3
     if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Veuillez indiquer un nombre compris entre 2 et 100 pour le nombre de messages à supprimer");
+      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
     
     // So we get our messages, and delete them. Simple enough, right?
     const fetched = await message.channel.fetchMessages({count: deleteCount});
     message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Impossible de supprimer les messages en raison de: ${error}`));
+      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
-    
-    if (message.content === "info"){  
-        message.reply("Je suis toujours en phase de dévellopement. J'ai été coder par Dotei !");
-        console.log('Infobot !');
-  }       
 });
 
-bot.login(process.env.TOKEN);
+client.login(config.token);
+           
