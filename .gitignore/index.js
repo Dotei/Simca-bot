@@ -7,7 +7,7 @@ var prefix = ("!")
 bot.on("ready", function() {
     bot.user.setGame("Command: !help");
     console.log("connected");
-});
+})
 
 bot.on("message", message => {
     if (message.content === prefix + "help"){  
@@ -27,9 +27,7 @@ bot.on("message", message => {
         console.log('Ching Chang!');
     }
   
-});  
-
-bot.on("message", function(message){
+  bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
 
     if (message.content == "bonjour"){
@@ -58,6 +56,7 @@ bot.on("message", function(message){
         
     }  
      
-});
+
+});  
 
 bot.login(process.env.TOKEN);
