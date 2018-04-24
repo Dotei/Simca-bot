@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
+cconst Discord = require("discord.js");
+const bot = new Discord.Client();
 
 
 var prefix = ("!")
@@ -9,7 +9,6 @@ bot.on("ready", function() {
     console.log("connected")
 });
 
-client.login(process.env.TOKEN);
 
 client.on("message", message => {
     if (message.content === prefix + "help"){  
@@ -29,5 +28,6 @@ client.on("message", message => {
         console.log('Ching Chang!');
     }   
 
-    
 });
+
+client.login(process.env.TOKEN);
