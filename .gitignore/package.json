@@ -1,11 +1,14 @@
 {
   "name": "simca",
   "version": "1.0.0",
-  "description": "A v11 Discord.JS music bot in 100 lines or less",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Dotei",
-  "license": "MIT"
+  "author": "dotei",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
 }
