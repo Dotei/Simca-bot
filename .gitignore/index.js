@@ -79,5 +79,13 @@ bot.on("message", (message) => {
                 message.channel.sendEmbed(embed);
             break;        
     }  
+	    if (message.content === "!flip") {
+    	var result = Math.floor((Math.random() * 2) + 1);
+    	if (result == 1) {
+    		bot.reply(message, "The coin landed on heads");
+    	} else if (result == 2) {
+    		bot.reply(message, "The coin landed on tails");
+    	}
+    }
      
 });
