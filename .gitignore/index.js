@@ -78,13 +78,13 @@ bot.on("message", function(message){
             break;
          case "punch":
             var embed = new Discord.RichEmbed()
-                .setTitle(`Simca punches ${msg.reply} `)
+                .setTitle(`Simca punches ${message.reply} `)
                 .setImage("http://imgur.com/6wKJVHy.gif")
             message.channel.sendEmbed(embed);
             break;
             case "hug":
                 var embed = new Discord.RichEmbed()
-                    .setTitle(`Simca hugs ${msg.reply} `)
+                    .setTitle(`Simca hugs ${message.reply} `)
                     .setImage("http://i.imgur.com/SUdqF9w.gif")
                 message.channel.sendEmbed(embed);
             break;
