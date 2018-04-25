@@ -69,13 +69,13 @@ bot.on("message", (message) => {
             break;
          case "punch":
             var embed = new Discord.RichEmbed()
-                .setTitle(`Simca punches ${message.user.username} `)
+                .setTitle(`Simca punches ${message.author.tag} `)
                 .setImage("http://imgur.com/6wKJVHy.gif")
             message.channel.sendEmbed(embed);
             break;
             case "hug":
                 var embed = new Discord.RichEmbed()
-                    .setTitle(`Simca hugs ${message.user.username} `)
+                    .setTitle(`Simca hugs ${message.author.tag} `)
                     .setImage("http://i.imgur.com/SUdqF9w.gif")
                 message.channel.sendEmbed(embed);
             break;        
