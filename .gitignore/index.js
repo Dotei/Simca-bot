@@ -21,6 +21,36 @@ bot.on("message", (message) => {
         message.reply("Hey");
 
   }
+    
+    
+    //Mute (STAFF)
+    if(message.content === PREFIX + "mute") {
+        let modRoleStaff = message.guild.roles.find("name", "Staff")
+        console.log("Mute")
+
+        if(!message.member.roles.has(modRoleStaff.id)) {
+            return message.reply("Tu n'a pas les permissions nécessaires pour effectuer cette commande !").catch(console.error)
+            console.log("!RoleStaff")
+        }
+        if(message.mentions.users.size === 0){
+            return message.reply("Aucun utilisateur a été mentionné").catch(console.error)
+            console.log("!Mention")
+        }
+        if(!message.guild.member(client.user).hasPermission("MANAGE_GUILD")) {
+            return message.reply("Je n'ai pas la permission requise (MANAGE_GUILD)").catch(console.error)
+            console.log("!Perm")
+        }
+        let muteMember = message.guild.member(message.mentions.users.first());
+        if(!muteMember) {
+        return message.channel.send("**La personne que vous avez mentionné n'est pas valide.**")
+        console.log("!MuteMember")
+        }
+        if(muteMember) {
+            let Mute = message.guild.roles.find("name", "Mute")
+            muteMember.addRole(Mute)
+            console.log("MUTED")
+        
+    }  
          
       
     if (message.content === PREFIX + "info"){  
