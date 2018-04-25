@@ -99,12 +99,12 @@ bot.on("message", function(message){
 bot.on("message", msg => {
 
       // Command /help
-     if (msg.content.startsWith(prefix + "help")) {
+     if (msg.content.startsWith(PREFIX + "help")) {
       msg.channel.sendMessage("```List of commands : \n\n !version  | Version  \n !help | Toute les commandes \n !cry | réaction \n !punch | se prendre un coup de poing \n    ```");
       console.log("Command executed: !help")
     }
     // Command /version
-    if (msg.content.startsWith(prefix + "version")) {
+    if (msg.content.startsWith(PREFIX + "version")) {
       msg.channel.sendMessage("``` Bot Discord Basic - Version 1.0 \n Créateur : Dotei ```");
       console.log("Command executed : /version")
     }
