@@ -1,15 +1,16 @@
 {
   "name": "simca",
   "version": "1.0.0",
-  "description": "",
+  "description": "A v11 Discord.JS music bot in 100 lines or less",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "dependencies": {
+    "discord.js" : "11.0.0",
+    "ytdl-core" :  "github:fent/node-ytdl-core#master",
+    "node-opus" : "^0.2.1"
   },
   "author": "Dotei",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^11.3.2"
-  }
-  
+  "license": "MIT"
+}
