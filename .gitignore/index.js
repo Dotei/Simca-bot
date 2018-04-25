@@ -5,6 +5,7 @@ const PREFIX ="!"
 const botconfig = require("./botconfig.json");
 const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 const command = args.shift().toLowerCase();
+const config = require("./config.json");
 
 
 var bot = new Discord.Client();
@@ -20,11 +21,11 @@ bot.on("message", async message => {
   
   // It's good practice to ignore other bots. This also makes your bot ignore itself
   // and not get into a spam loop (we call that "botception").
-  if(message.author.bot) return;
+        if(message.author.bot) return;
   
   // Also good practice to ignore any message that does not start with our prefix, 
   // which is set in the configuration file.
-  if(message.content.indexOf(config.prefix) !== 0) return;
+        if(message.content.indexOf(config.prefix) !== 0) return;
   
   // Here we separate our "command" name, and our "arguments" for the command. 
   // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
@@ -35,7 +36,7 @@ bot.on("message", async message => {
   
   // Let's go with a few common example commands! Feel free to delete or change those.
   
-  if(command === "ping") {
+        if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
     const m = await message.channel.send("Ping?");
@@ -44,22 +45,22 @@ bot.on("message", async message => {
 
 
 bot.on("message", function(message){
-    if (message.author.equals(bot.user)) return;
+        if (message.author.equals(bot.user)) return;
     })
 
     bot.on("message", (message) => {
-      if (message.content === "bonjour"){
+        if (message.content === "bonjour"){
         message.reply("Hey");
 
   }
        
       
-     if (message.content === PREFIX + "info"){  
+        if (message.content === PREFIX + "info"){  
         message.reply("```Je suis toujours en développement, coder par Dotei ! ```");
         console.log('info bot !');
     }
     
-     if (message.content === PREFIX + "serverinfo"){
+        if (message.content === PREFIX + "serverinfo"){
     
         let sicon = message.guild.iconURL;
         let serverembed = new Discord.RichEmbed()
@@ -74,10 +75,10 @@ bot.on("message", function(message){
         return message.channel.send(serverembed);
       }
     
-if(command === "say") {
+        if(command === "say") {
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
-    const sayMessage = args.join(" ");
+          const sayMessage = args.join(" ");
     // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
     message.delete().catch(O_o=>{}); 
     // And we get the bot to say the thing: 
