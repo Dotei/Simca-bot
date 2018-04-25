@@ -31,9 +31,22 @@ bot.on("message", message => {
         .addField("Nombre de membres", message.guild.memberCount);
     
         return message.channel.send(serverembed);
+        
       }
-
-    if (message.content === "ping"){  
+      if (message.content === PREFIX + "botinfo"){
+     
+        let bicon = bot.user.displayAvatarURL;
+        let botembed = new Discord.RichEmbed()
+        .setDescription("Information du bot")
+        .setColor("#15f153")
+        .setThumbnail(bicon)
+        .addField("Nom du bot", bot.user.username)
+        .addField("Crée le", bot.user.createdAt);
+    
+        return message.channel.send(botembed);
+          
+      }
+     if (message.content === "ping"){  
         message.reply("Pong !");
         console.log('Ping Pong !');
     }
