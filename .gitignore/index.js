@@ -106,7 +106,7 @@ bot.on("message", function(message){
             break;
             case "hug":
                 var embed = new Discord.RichEmbed()
-                    .setTitle(`Simca punches ${message.author.tag} `)
+                    .setTitle(`Simca hugs ${message.author.tag} `)
                     .setImage("http://i.imgur.com/SUdqF9w.gif")
                 message.channel.sendEmbed(embed);
             break;
