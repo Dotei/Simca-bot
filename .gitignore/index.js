@@ -2,9 +2,7 @@ const Discord = require("discord.js");
 const PREFIX ="!"
 const botconfig = require("./botconfig.json");
 var bot = new Discord.Client();
-var resultOpts = ["Result", "Exact result", "Decimal approximation"];
-var WolframLib = require('node-wolfram');
-var Wolfram = new WolframLib(config.wolfram.JYGATT-QPHQGVL8XP);
+
 
 bot.login(process.env.TOKEN);
 
@@ -71,24 +69,16 @@ bot.on("message", (message) => {
             break;
          case "punch":
             var embed = new Discord.RichEmbed()
-                .setTitle(`Simca punches ${message.author.tag} `)
+                .setTitle(`Simca punches ${message.user.username} `)
                 .setImage("http://imgur.com/6wKJVHy.gif")
             message.channel.sendEmbed(embed);
             break;
             case "hug":
                 var embed = new Discord.RichEmbed()
-                    .setTitle(`Simca hugs ${message.author.tag} `)
+                    .setTitle(`Simca hugs ${message.user.username} `)
                     .setImage("http://i.imgur.com/SUdqF9w.gif")
                 message.channel.sendEmbed(embed);
             break;        
     }  
-	    if (message.content === PREFIX + "flip") {
-    	var result = Math.floor((Math.random() * 2) + 1);
-    	if (result == 1) {
-    		bot.reply(message, "The coin landed on heads");
-    	} else if (result == 2) {
-    		bot.reply(message, "The coin landed on tails");
-    	}
-    }
      
 });
