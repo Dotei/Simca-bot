@@ -43,31 +43,15 @@ bot.on("message", function(message){
         return message.channel.send(serverembed);
       }
     
-    if (message.content === PREFIX + "kick"){  
-    
-        let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!kUser) return message.channel.send("Can't find user!");
-        let kReason = args.join(" ").slice(22);
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
-        if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
-    
-        let kickEmbed = new Discord.RichEmbed()
-        .setDescription("~Kick~")
-        .setColor("#e56b00")
-        .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-        .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`)
-        .addField("Kicked In", message.channel)
-        .addField("Tiime", message.createdAt)
-        .addField("Reason", kReason);
-    
-        let kickChannel = message.guild.channels.find(`name`, "incidents");
-        if(!kickChannel) return message.channel.send("Can't find incidents channel.");
-    
-        message.guild.member(kUser).kick(kReason);
-        kickChannel.send(kickEmbed);
-    
-        return;
-      }
+if(command === "say") {
+    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
+  }
     
      if (message.content === PREFIX + "botinfo"){
      
