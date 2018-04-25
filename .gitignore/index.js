@@ -22,9 +22,17 @@ bot.on("message", (message) => {
 
   }
     
-    
-    //Mute (STAFF)
-    if(message.content === PREFIX + "mute") {
+  
+        
+    }      
+      
+    if (message.content === PREFIX + "info"){  
+        message.reply("```Je suis toujours en développement, coder par Dotei ! ```");
+        console.log('info bot !');
+    }
+
+
+    if(message.content === prefixa + "mute") {
         let modRoleStaff = message.guild.roles.find("name", "Staff")
         console.log("Mute")
 
@@ -49,14 +57,8 @@ bot.on("message", (message) => {
             let Mute = message.guild.roles.find("name", "Mute")
             muteMember.addRole(Mute)
             console.log("MUTED")
-        
+        }
     }  
-         
-      
-    if (message.content === PREFIX + "info"){  
-        message.reply("```Je suis toujours en développement, coder par Dotei ! ```");
-        console.log('info bot !');
-    }
     
      if (message.content === PREFIX + "serverinfo"){
     
