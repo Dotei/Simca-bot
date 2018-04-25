@@ -79,7 +79,7 @@ bot.on("message", (message) => {
                 message.channel.sendEmbed(embed);
             break;        
     }  
-	    if (message.content === "!flip") {
+	    if (message.content === PREFIX + "flip") {
     	var result = Math.floor((Math.random() * 2) + 1);
     	if (result == 1) {
     		bot.reply(message, "The coin landed on heads");
