@@ -16,17 +16,14 @@ bot.on("message", function(message){
     if (message.author.equals(bot.user)) return;
     })
 
-bot.on("message", (message) => {
-    if (message.content === "bonjour"){
+    bot.on("message", (message) => {
+      if (message.content === "bonjour"){
         message.reply("Hey");
 
   }
-    
-  
-        
-    }      
+       
       
-    if (message.content === PREFIX + "info"){  
+     if (message.content === PREFIX + "info"){  
         message.reply("```Je suis toujours en développement, coder par Dotei ! ```");
         console.log('info bot !');
     }
