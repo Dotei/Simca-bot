@@ -2,6 +2,9 @@ const Discord = require("discord.js");
 const PREFIX ="!"
 const botconfig = require("./botconfig.json");
 var bot = new Discord.Client();
+var resultOpts = ["Result", "Exact result", "Decimal approximation"];
+var WolframLib = require('node-wolfram');
+var Wolfram = new WolframLib(config.wolfram.JYGATT-QPHQGVL8XP);
 
 bot.login(process.env.TOKEN);
 
