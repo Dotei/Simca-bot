@@ -44,6 +44,11 @@ bot.on("message", function(message){
     
         return message.channel.send(serverembed);
       }
+	    
+	if (message.content === "!roll") {
+  		var result = Math.floor((Math.random() * 100) + 1);
+  		bot.reply(message, "You rolled a: " + result);
+    }
     
 
      if (message.content === PREFIX + "botinfo"){
