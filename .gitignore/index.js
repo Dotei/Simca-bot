@@ -8,7 +8,7 @@ const botconfig = require("./botconfig.json");
 var bot = new Discord.Client();
 
 bot.login(process.env.TOKEN);
-
+bot.login("NDM4MjkyNjgzODcwNTY4NDQ4.DcCfZQ.wJjozX0tXzb3xbSZ1bxh_rkyn_s");
 
 bot.on("ready", function() {
     console.log("Ready");
@@ -83,10 +83,7 @@ bot.on("message", (message) => {
                     .setTitle(`Simca hugs ${message.author.tag} `)
                     .setImage("http://i.imgur.com/SUdqF9w.gif")
                 message.channel.sendEmbed(embed);
-            break;
-           
-
-        
+            break;        
     }  
      
 });
